@@ -80,7 +80,7 @@ function onClickSearhButton() {
   // 7. set the innerHTML of the new paragraph to the search term
   //TODO:
   // 8. append the new paragraph to the searches div
-  //TODO:
+
 }
 
 function refreshUI(searches) {
@@ -125,7 +125,7 @@ const listItem = this.parentNode;
 listItem.innerHTML = "";
 
 listItem.appendChild(editInput);
-
+  //TODO:
 var submitBtn = document.createElement('button');
 submitBtn.className = "submit";
 submitBtn.innerHTML = "Submit";
