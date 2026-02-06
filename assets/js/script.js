@@ -7,11 +7,14 @@ var searchButton = document.getElementById("searchButton");
 // 3. add an event listener to the searchButton that calls the search function when clicked
 searchButton.addEventListener("click", onClickSearhButton);
 
+const warning = document.getElementById("warning");
+
 
 const listOfSearches  = []; //creating an empty array to store searches
 
 var list = document.getElementById('searches');
 
+var searchWarning = false;
 //  List<string> test = new List<string>();
 
 // const inputBtn = document.getElementById("searchButton");
@@ -36,10 +39,23 @@ function onClickSearhButton() {
   //2. **Validate** that text has been entered (non-empty).
   if (searchOutput == "") {
     alert("Please enter a search term");
+   
     return;
   }
 
-  else {
+  if (listOfSearches.includes(searchOutput)) {
+    if (searchWarning == false) {
+      warning.style.display = "flex"
+       searchWarning = true;
+          return;
+    }
+    else if (searchWarning == true) {
+      warning.style.display = "none"
+      searchWarning = false;
+    }
+ 
+  }
+
     //3. Add the valid search text to a **list of searches** displayed on the page.
     listOfSearches.push(searchOutput);
     refreshUI(searchOutput);
@@ -51,7 +67,9 @@ function onClickSearhButton() {
 
       });
 
-  }
+  
+
+
 
 
   //TODO:
