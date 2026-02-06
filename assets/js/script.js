@@ -121,7 +121,6 @@ editInput.type = "text";
 editInput.id = "newSearchTerm";
 editInput.placeholder = "Enter a new entry";
 
-//Remove the old text in the list item and replace it with the text entry box and submit button
 const listItem = this.parentNode; 
 listItem.innerHTML = "";
 
@@ -136,15 +135,36 @@ listItem.appendChild(submitBtn);
 }
 
 function submitEdit() {
-//Create a new list item with the new search term and replace the old list item with the new one
+
+// var newSearchTerm = document.getElementById(`list-item-${id}`).value;
 var newSearchTerm = document.getElementById("newSearchTerm").value;
-const listItem = this.parentNode; 
-listItem.innerHTML = "";
+console.log(newSearchTerm);
+
+var listItem = this.parentNode; 
+listItem.innerHTML = "";  
+listItem.appendChild(document.createTextNode(newSearchTerm));
+
+var editBtn = document.createElement('button');
+editBtn.className = "edit";
+editBtn.innerHTML = "Edit";
+editBtn.addEventListener("click", editSearch);
+listItem.appendChild(editBtn);
+
+var deleteBtn = document.createElement('button');
+deleteBtn.className = "delete";
+deleteBtn.innerHTML = "Delete";
+deleteBtn.addEventListener("click", deleteSearch);
+listItem.appendChild(deleteBtn);
 
 }
 
 function deleteSearch() 
 {
-
+  // listOfSearches.pop(this.parentNode);
+  listOfSearches.pop(this.parentNode.innerText)
+var listItem = this.parentNode;
+// listItem.Remove();
+listItem.remove();
+listItem.innerHTML = "";  
 
 }
