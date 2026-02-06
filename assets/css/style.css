@@ -5,6 +5,35 @@ html {
     font-family: 'Roboto', sans-serif;
     background-color: #f4f6f9;
 }
+.edit {
+    margin-left: 5px;
+    padding: 5px 5px;
+    background-color: #2d3e50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.delete {
+    margin-left: 5px;
+    padding: 5px 5px;
+    background-color: #2d3e50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search-term {
+    display: flex;
+    padding: 20px;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+}
+
+
 
 .container {
     display: flex;

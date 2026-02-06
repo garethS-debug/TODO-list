@@ -85,10 +85,66 @@ function onClickSearhButton() {
 
 function refreshUI(searches) {
 
+//Add elements to the page
+//<li id = "search-term"> Search term <button class="edit">Edit</button> <button class="delete">Delete</button></li>
 
-  console.log(searches);
+  console.log("list", searches);
   var ulEl = document.createElement('li');
+  ulEl.id = `list-item-${searches}`;
+
   ulEl.appendChild(document.createTextNode(searches));
+
+  var editBtn = document.createElement('button');
+  editBtn.className = "edit";
+  editBtn.innerHTML = "Edit";
+  editBtn.addEventListener("click", editSearch);
+
+  var deleteBtn = document.createElement('button');
+  deleteBtn.className = "delete";
+  deleteBtn.innerHTML = "Delete";
+  deleteBtn.addEventListener("click", deleteSearch);
+
+
+  ulEl.appendChild(editBtn);
+  ulEl.appendChild(deleteBtn);
+
+ 
   list.appendChild(ulEl);
+
+}
+
+function editSearch() {
+//spawn a text entry box and submit button
+//<input type="text" id="searchTerm" placeholder="Enter a search term" />
+var editInput = document.createElement('input');
+editInput.type = "text";
+editInput.id = "newSearchTerm";
+editInput.placeholder = "Enter a new entry";
+
+//Remove the old text in the list item and replace it with the text entry box and submit button
+const listItem = this.parentNode; 
+listItem.innerHTML = "";
+
+listItem.appendChild(editInput);
+
+var submitBtn = document.createElement('button');
+submitBtn.className = "submit";
+submitBtn.innerHTML = "Submit";
+submitBtn.addEventListener("click", submitEdit);
+listItem.appendChild(submitBtn);
+
+}
+
+function submitEdit() {
+//Create a new list item with the new search term and replace the old list item with the new one
+var newSearchTerm = document.getElementById("newSearchTerm").value;
+const listItem = this.parentNode; 
+listItem.innerHTML = "";
+
+}
+
+function deleteSearch() 
+{
+
 
 }
