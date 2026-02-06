@@ -1,69 +1,61 @@
-# The Interactive TODO List
+# Implementing Event Handlers
 
 ## Challenge
 
-Now that you're familiar with making web pages interactive using JavaScript, it's time to put your skills to the test! In this challenge, you will create an interactive TODO list application.
+To get you prepared for this week's challenge, in this exercise, you will be implementing a **button event handler** to handle click events. When the button is clicked, your code will:
 
-### Requirements:
+1. **Read the search text** from an input field on the page.
+2. **Validate** that text has been entered (non-empty).
+3. Add the valid search text to a **list of searches** displayed on the page.
 
-- Users should be able to **add new tasks** to the list.
-- Tasks should be displayed dynamically on the web page.
-- Ensure that only **valid tasks** (non-empty or sensible values) are allowed to be added.
-- Users should be able to **delete tasks** from the list.
-
-### BONUS:
-
-- Implement an **edit feature** so users can modify existing tasks and save changes.
+The goal is to practice handling events, manipulating the DOM, and performing basic form validation.
 
 ## Key Learnings
 
 By completing this exercise, you will learn:
 
-- How to manipulate the **Document Object Model (DOM)** using JavaScript.
-- How to **read, create, update, and delete** elements within the DOM.
-- How to handle **user inputs** and implement **form validation**.
-- Bonus: How to implement editing functionality for dynamic web content.
+- How to handle **click events** using event handlers.
+- How to **manipulate the DOM** to dynamically add new elements.
+- How to perform basic **input validation** in JavaScript.
+- How to append valid input as a new item to a list on the page.
 
 ## User Story
 
-As a user, I want to be able to manage my tasks using a simple web-based TODO list. I should be able to add new tasks, delete tasks, and, for bonus points, edit existing tasks and save the changes. The application should give me feedback if I try to add invalid tasks.
+As a user, I want to be able to enter text into a search bar, click a button, and have my search term added to a list below the search bar. The search term should not be added if I don’t enter anything into the search field.
 
 ## Acceptance Criteria
 
-- Users can add a task by typing into an input field and clicking a button. The new task is immediately displayed in the task list.
-- Tasks must be validated before being added (e.g., non-empty and unique).
-- Users can delete tasks from the list, and the task should be removed from the DOM.
-- (Bonus) Users can click an "Edit" button for a task, modify the text, and save the changes.
+- The button should trigger an event handler when clicked.
+- The event handler should:
+  1. **Read the input** value from the search field.
+  2. **Validate** that the input is not empty.
+  3. Add the valid input to the list of previous searches on the page.
+- The search list should **update dynamically** each time a new valid search is added.
+- The user should see an error message if they attempt to submit an empty search.
 
 ## Getting Started
 
-To get started with this exercise:
+To begin, follow these steps:
 
-1. Create a new folder for the project.
-2. Set up an `index.html` file with an input field for adding tasks and a section to display the task list.
-3. Use JavaScript to:
-   - Handle the addition of new tasks.
-   - Validate the task input.
-   - Dynamically display and update tasks on the page.
-   - Implement the delete functionality.
-4. (Bonus) Add functionality to allow tasks to be edited in place and saved.
+1. Open the provided `index.html` and `script.js` files.
+2. Identify the **search input field** and **button** in the DOM.
+3. In `script.js`, write the event handler that:
+   - Captures the click event on the button.
+   - Reads the value of the search input.
+   - Validates the input to ensure it's not empty.
+   - If valid, creates a new list item and appends it to the list of searches.
+4. Ensure that each new search term is added without reloading the page.
 
 ## Hints
 
-- Use **event listeners** to capture user actions (e.g., clicking the "Add" button or hitting the "Enter" key).
-- Store tasks in an **array** and render the array's contents into the DOM after every operation (add, delete, or edit).
+- Use `addEventListener()` to attach the click event handler to the button.
+- Use `document.querySelector()` or `getElementById()` to access the input field and list.
+- `input.value` can help you retrieve the value from the input field.
+- Use `document.createElement()` to create a new `<li>` element for the search list.
+- Append the new search term using `appendChild()`.
 
-## Submission
+## Useful Resources
 
-Once your site has been migrated and deployed, submit the link to your GitHub Repo and GitHub Pages deployment.
-
-## Useful Online Resources
-
-1. **MDN Web Docs - JavaScript DOM Manipulation**
-
-   - This documentation provides comprehensive information about how to use JavaScript to manipulate the DOM.
-   - [Read more](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction)
-
-2. **JavaScript Event Listeners**
-   - A guide on how to use event listeners in JavaScript to handle user interactions.
-   - [Read more](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener)
+- [MDN Web Docs: EventTarget.addEventListener()](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener)
+- [MDN Web Docs: Form Data Validation](https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation)
+- [MDN Web Docs: DOM Manipulation](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction)

@@ -144,6 +144,10 @@ var listItem = this.parentNode;
 listItem.innerHTML = "";  
 listItem.appendChild(document.createTextNode(newSearchTerm));
 
+// var editBtn = document.createElement('button');
+// editBtn.addEventListener("click", editSearch);
+// listItem.appendChild(editBtn);
+
 var editBtn = document.createElement('button');
 editBtn.className = "edit";
 editBtn.innerHTML = "Edit";
